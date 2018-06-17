@@ -1,0 +1,19 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x align-spaced">
+      {% for movie in data %}
+        <div class="cell small-8 medium-6 large-3">
+          <section>
+          <div class="overlay-image"><a href="movie/{{ movie.id }}">
+            <img src="{{ baseUrl('assets/posters/') }}{{ movie.poster }}">
+              <div class="text">{{ movie.title }}</div>
+                </a></div></section>
+            </div>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endblock %}

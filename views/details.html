@@ -1,0 +1,47 @@
+
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x small-up-1 medium-up-2">
+
+      <div id="detail-film" class="media-object stack-for-small">
+        <div class="media-object-section">
+          <div class="thumbnail">
+            <img width="300px" src= "{{ baseUrl('assets/posters/') }}{{ data[0].movie.poster }}" class="picture">
+          </div>
+        </div>
+        <div class="media-object-section">
+
+          <h4 class="movie-title">{{ data[0].movie.title }} <small><a href="{{ baseUrl('year/') }}{{ data[0].movie.year }}">{{ data[0].movie.year }}</a></small></h4>
+          <p>
+            {% for genre in data[3].genres %}
+              <span><a href="{{ baseUrl('genre/') }}{{ genre.id }}">{{ genre.name }}</a></span>
+              {% if not loop.last %} & {% endif %}
+            {% endfor %}
+          </p>
+          <p>{{ data[0].movie.description }}</p>
+          <p>Réalisateur(s) :
+            <strong>
+              {% for director in data[1].directors %}
+                <span><a href="{{ baseUrl('director/') }}{{ director.id }}">{{ director.firstname }} {{ director.lastname }}</a></span>
+                {% if not loop.last %} - {% endif %}
+              {% endfor %}
+            </strong>
+          </p>
+          <p>Acteurs :
+            <strong>
+              {% for actor in data[2].actors %}
+                <span><a href="{{ baseUrl('actor/') }}{{ actor.id }}">{{ actor.firstname }} {{ actor.lastname }}</a></span>
+                {% if not loop.last %} - {% endif %}
+              {% endfor %}
+            </strong>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

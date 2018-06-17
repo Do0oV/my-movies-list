@@ -1,0 +1,133 @@
+
+{% extends "layouts/admin.html" %}
+
+{% block content %}
+
+
+<form method="POST" enctype="multipart/form-data">
+  <div class="grid-container">
+
+    <h3 class="h3">Ajouter un film (unprotected)</h3>
+    <div class="grid-x grid-padding-x">
+      <div class="medium-4 cell">
+        <label>Title
+          <input type="text" name="title">
+        </label>
+      </div>
+      <div class="medium-2 cell">
+        <label>Year
+          <input type="text" name="year">
+        </label>
+      </div>
+      <div class="medium-6 cell">
+        <label>Upload Poster (Warning! Name the file "movie_title.jpg/jpeg/png")</label>
+        <label for="poster" class="button">Upload Poster</label>
+        <input type="file" id="poster" name="poster" class="show-for-sr" accept=".jpg, .jpeg, .png">
+
+      </div>
+    </div>
+    <label>Description
+      <textarea name="description"></textarea>
+    </label>
+    <div class="dentity">
+      <h5>Genre(s)</h5>
+      <!-- <button type="button" class="hollow primary button">+</button> -->
+    </div>
+    <div class="grid-x grid-padding-x">
+      <div class="medium-4 cell">
+        <label>Name
+          <input type="text" name="genre">
+        </label>
+      </div>
+    </div>
+    <div class="grid-x grid-padding-x">
+      <div class="medium-4 cell">
+        <label>Name
+          <input type="text" name="genre2">
+        </label>
+      </div>
+    </div>
+    <div class="dentity">
+      <h5>Director(s)</h5>
+      <!-- <button type="button" class="hollow primary button">+</button> -->
+    </div>
+    <div class="grid-x grid-padding-x">
+      <div class="medium-4 cell">
+        <label>Firstname
+          <input type="text" name="director_firstname">
+        </label>
+      </div>
+      <div class="medium-4 cell">
+        <label>Lastname
+          <input type="text" name="director_lastname">
+        </label>
+      </div>
+    </div>
+    <div class="grid-x grid-padding-x">
+      <div class="medium-4 cell">
+        <label>Firstname
+          <input type="text" name="director2_firstname">
+        </label>
+      </div>
+      <div class="medium-4 cell">
+        <label>Lastname
+          <input type="text" name="director2_lastname">
+        </label>
+      </div>
+    </div>
+
+
+    <div class="dentity">
+
+
+      <h5>Actors(s)</h5>
+      <!-- <button type="button" class="hollow primary button">+</button> -->
+    </div>
+
+    <div class="grid-x grid-padding-x">
+      <div class="medium-4 cell">
+        <label>Firstname
+          <input type="text" name="actor_firstname">
+        </label>
+      </div>
+      <div class="medium-4 cell">
+        <label>Lastname
+          <input type="text" name="actor_lastname">
+        </label>
+      </div>
+    </div>
+
+
+    <div class="grid-x grid-padding-x">
+      <div class="medium-4 cell">
+        <label>Firstname
+          <input type="text" name="actor2_firstname">
+        </label>
+      </div>
+      <div class="medium-4 cell">
+        <label>Lastname
+          <input type="text" name="actor2_lastname">
+        </label>
+      </div>
+    </div>
+
+
+    <div class="grid-x grid-padding-x">
+      <div class="medium-4 cell">
+        <label>Firstname
+          <input type="text" name="actor3_firstname">
+        </label>
+      </div>
+      <div class="medium-4 cell">
+        <label>Lastname
+          <input type="text" name="actor3_lastname">
+        </label>
+      </div>
+    </div>
+
+
+    <button id="valid" type="submit" name="submit" class="button">Valider</button>
+  </div>
+</form>
+
+{% endblock %}

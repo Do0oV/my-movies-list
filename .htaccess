@@ -1,0 +1,20 @@
+
+RewriteEngine On
+
+AddDefaultCharset UTF-8
+
+#compression
+AddOutputFilterByType DEFLATE text/text application/xml application/xhtml+xml text/html text/javascript text/css text/plain
+
+#ErrorDocument 404 404.php
+
+# if file/folder does not exist do below
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^movie/add$ index.php?add=true [L]
+RewriteRule ^movie/([0-9]+)$ index.php?id=$1 [L]
+RewriteRule ^year/([0-9]+)$ index.php?year=$1 [L]
+RewriteRule ^genre/([0-9]+)$ index.php?genre=$1 [L]
+RewriteRule ^director/([0-9]+)$ index.php?director=$1 [L]
+RewriteRule ^actor/([0-9]+)$ index.php?actor=$1 [L]
